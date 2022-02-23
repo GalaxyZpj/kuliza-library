@@ -2,9 +2,9 @@ package com.kuliza.library.repositories;
 
 import com.kuliza.library.entities.BookAuthor;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookAuthorRepository extends CrudRepository<BookAuthor, Long> {
+public interface BookAuthorRepository extends JpaRepository<BookAuthor, Long> {
 }

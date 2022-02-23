@@ -6,8 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
@@ -16,10 +16,10 @@ public abstract class AbstractEntity {
   @GeneratedValue
   private Long id;
 
-  @CreatedDate
+  @CreationTimestamp
   private Instant created;
 
-  @LastModifiedDate
+  @UpdateTimestamp
   private Instant lastModified;
 
   public Long getId() {

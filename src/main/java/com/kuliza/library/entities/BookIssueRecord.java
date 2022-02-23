@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 import com.kuliza.library.entities.abstracts.AbstractEntity;
 
@@ -17,7 +18,8 @@ public class BookIssueRecord extends AbstractEntity {
   @ManyToOne
   private Person person;
 
-  @Column(nullable = false, columnDefinition = "DATE")
+  @Column(columnDefinition = "DATE")
+  @NotBlank(message = "returnBy is mandatory")
   private LocalDate returnBy;
 
   @Column(nullable = false)

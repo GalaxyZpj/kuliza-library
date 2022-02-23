@@ -1,11 +1,11 @@
 package com.kuliza.library.entities.abstracts;
 
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 
 @MappedSuperclass
 public abstract class AbstractNamedEntity extends AbstractEntity {
-  @Column(nullable = false)
+  @NotBlank(message = "name is mandatory")
   private String name;
 
   public String getName() {
