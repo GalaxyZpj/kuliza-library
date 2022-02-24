@@ -21,7 +21,7 @@ public class BookAuthorService {
   }
 
   public List<BookAuthor> fetchAuthors() {
-    return (List<BookAuthor>) repository.findAll();
+    return repository.findAll();
   }
 
   public BookAuthor fetchAuthor(Long authorId) {
