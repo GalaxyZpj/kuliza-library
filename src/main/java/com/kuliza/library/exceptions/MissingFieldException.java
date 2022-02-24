@@ -1,4 +1,4 @@
-package com.kuliza.library.exceptions.generics;
+package com.kuliza.library.exceptions;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.kuliza.library.exceptions.generics;
+package com.kuliza.library.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.Nullable;
