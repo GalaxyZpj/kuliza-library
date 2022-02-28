@@ -1,8 +1,8 @@
 package com.kuliza.library.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
 
 import com.kuliza.library.entities.abstracts.AbstractNamedEntity;
 
@@ -10,11 +10,11 @@ import com.kuliza.library.entities.abstracts.AbstractNamedEntity;
 public class Book extends AbstractNamedEntity {
 
   @ManyToOne(optional = false)
-  @NotBlank(message = "category is mandatory")
+  @JoinColumn(name = "category_id")
   private BookCategory category;
 
   @ManyToOne(optional = false)
-  @NotBlank(message = "author is mandatory")
+  @JoinColumn(name = "author_id")
   private BookAuthor author;
 
   private int copies;

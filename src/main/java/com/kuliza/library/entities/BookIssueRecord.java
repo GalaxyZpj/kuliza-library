@@ -4,22 +4,23 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
 
 import com.kuliza.library.entities.abstracts.AbstractEntity;
 
 @Entity
 public class BookIssueRecord extends AbstractEntity {
 
-  @ManyToOne
+  @ManyToOne(optional = false)
+  @JoinColumn(name = "book_id")
   private Book book;
 
-  @ManyToOne
+  @ManyToOne(optional = false)
+  @JoinColumn(name = "person_id")
   private Person person;
 
-  @Column(columnDefinition = "DATE")
-  @NotBlank(message = "returnBy is mandatory")
+  @Column(columnDefinition = "DATE", nullable = false)
   private LocalDate returnBy;
 
   @Column(nullable = false)
